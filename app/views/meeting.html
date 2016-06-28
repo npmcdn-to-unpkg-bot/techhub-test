@@ -1,21 +1,34 @@
-<!doctype html>
-<html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="description" content="Choose available slots to book">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Book a room</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-</head>
+<style media="screen">
+.room-card {
+    float: left;
+    width: 200px;
+    height: auto;
+    background: #e6e5e4;
+    border: 2px solid #b6b5b4;
+}
 
-<body>
+.mint {
+    background: #aaf8cc;
+}
+</style>
 
+<h1>Meeting Rooms @ TechHub</h1>
 
-
-  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-  <script src="https://npmcdn.com/contentful@latest/browser-dist/contentful.min.js"></script>
-  <script src="meeting.js"></script>
-</body>
-
-</html>
+<div class="room-grid">
+    <div class="room-card {{room.fields.name.toLowerCase()}}" ng-repeat="room in meeting.rooms" ng-click="meeting.selectRoom(room)">
+        <h3>{{ room.fields.name }}</h3>
+        <div class="room-features" ng-show="meeting.isSelected(room)">
+            <p> {{ room.fields.description }} </p>
+            <h6>Features:</h6>
+            <ul>
+                <li>Capacity: {{ room.fields.capacity }}</li>
+                <li>Type: {{ room.fields.type }}</li>
+                <li>Price: €{{ room.fields.hourlyPrice }}/h</li>
+            </ul>
+            <p>Location: {{ room.fields.location }}</p>
+            <p>{{ room.fields.floor }} floor</p>
+            <p>Opening Hours {{ meeting.isOpen(room.fields.openingHour, room.fields.closingHour) }}</p>
+        </div>
+    </div>
+</div>
