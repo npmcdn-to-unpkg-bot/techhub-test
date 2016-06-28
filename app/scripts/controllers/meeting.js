@@ -1,12 +1,30 @@
-(function(){
-    var client = contentful.createClient({
-    space: 'a87ovfhrfgt0',
-    accessToken: 'ae40d50dd4ea667e6e0d185395a4f58ae6f514383513ff2e368bffba7591022b'
-  });
+angular.module('techhubApp').controller('MeetingCtrl',function(rooms,$timeout){
+    var vm = this;
+    var meetingRooms = rooms.getRooms();
+    vm.rooms = [];
 
-  client.getEntries({
-   'content_type': 'meetingRoom'
-     }).then(function(entries) {
-       console.log(entries);
-     });
-})(jQuery);
+    meetingRooms.then(function(response){
+        $timeout(function(){
+            vm.rooms = response.items;
+            setMasonry();
+            console.log(vm.rooms);
+        },800);
+    });
+
+    vm.isOpen = function(opening,closing){
+        return opening.split("T")[1] + " - " + closing.split("T")[1];
+    }
+
+
+    var selectedRoom = null;
+
+    vm.selectRoom = function(room){
+        setMasonry();
+        selectedRoom = (selectedRoom === room) ? null : room;
+    }
+
+    vm.isSelected = function(room){
+        return room === selectedRoom;
+
+    }
+});
