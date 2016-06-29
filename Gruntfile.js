@@ -82,16 +82,16 @@ module.exports = function (grunt) {
           open: true,
           middleware: function (connect) {
             return [
-              connect.static('.tmp'),
-              connect().use(
-                '/bower_components',
-                connect.static('./bower_components')
-              ),
-              connect().use(
-                '/app/styles',
-                connect.static('./app/styles')
-              ),
-              connect.static(appConfig.app)
+                connect.static('.tmp'),
+                connect().use(
+                    '/bower_components',
+                    connect.static('./bower_components')
+                ),
+                connect().use(
+                    '/app/styles',
+                    connect.static('./app/styles')
+                ),
+                connect.static(appConfig.app)
             ];
           }
         }
@@ -428,6 +428,7 @@ module.exports = function (grunt) {
     }
   });
 
+  grunt.loadNpmTasks('grunt-connect-proxy');
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
@@ -437,6 +438,7 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'wiredep',
+      'configureProxies:server',
       'concurrent:server',
       'postcss:server',
       'connect:livereload',
