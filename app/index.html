@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/meetings.css">
     <script src="https://npmcdn.com/contentful@latest/browser-dist/contentful.min.js"></script>
   </head>
   <body ng-app="techhubApp">
     <div class="header">
       <div class="navbar navbar-default" role="navigation">
-        <div class="container">
+        <div class="container navigation">
           <div class="navbar-header">
 
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
@@ -41,7 +42,6 @@
     <div ng-view=""></div>
     </div>
 
-
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -51,7 +51,6 @@
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/isotope/dist/isotope.pkgd.min.js"></script>
     <script src="bower_components/desandro-matches-selector/matches-selector.js"></script>
     <script src="bower_components/fizzy-ui-utils/utils.js"></script>
     <script src="bower_components/get-size/get-size.js"></script>
@@ -63,6 +62,7 @@
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="bower_components/isotope/dist/isotope.pkgd.min.js"></script>
         <script src="scripts/roomsMasonry.js"></script>
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>

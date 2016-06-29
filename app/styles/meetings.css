@@ -1,0 +1,43 @@
+.room-card {
+    float: left;
+    width: 320px;
+    height: auto;
+    background: #FFF2AC;
+    padding: 10px 0 15px 20px;
+}
+
+.room-card h3 {
+  margin-top: 10px;
+}
+
+.mint {
+  background: #48F774;
+}
+
+.green {
+  background: #279828;
+}
+
+.red {
+  background: #F15553;
+}
+
+.orange {
+  background: #FF7526;
+}
+
+.yellow {
+  background: #FFD01B;
+}
+
+.purple {
+  background: #A6419B;
+}
+
+.pink {
+  background: #D539B8;
+}
+
+.blue {
+  background: #3CA2FF;
+}
