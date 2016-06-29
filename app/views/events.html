@@ -1,29 +1,24 @@
+<h1>Take a look at the events hosted by Techhub</h1>
 
-  <style>
-    body {
-      padding: 20px;
-    }
+<div class="form-group">
+    <input type="search" name="search" ng-model="filterBy.search" class="form-control" placeholder="Filter events">
+</div>
 
-    .container {
-      max-width: 700px;
-    }
-  </style>
-
-  <div class="container">
-    <table class="table table-bordered" >
-      <thead>
-        <th>Event</th>
-        <th>Month</th>
-        <th>Day</th>
-        <th>Time / Location</th>
-      </thead>
-      <tbody>
-        <tr ng-repeat="event in event.events">
-          <td><a href="{{ event.link }}">{{ event.title }}</a></td>
-          <td>{{ event.month }}</td>
-          <td>{{ event.day }}</td>
-          <td>{{ event.where }}</td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
+<div class="container">
+<table class="table table-bordered" >
+  <thead>
+    <th>Event</th>
+    <th>Month</th>
+    <th>Day</th>
+    <th>Time / Location</th>
+  </thead>
+  <tbody>
+    <tr ng-repeat="event in event.events | filter:filterBy.search">
+      <td><a href="{{ event.link }}">{{ event.title }}</a></td>
+      <td>{{ event.month }}</td>
+      <td>{{ event.day }}</td>
+      <td>{{ event.where }}</td>
+  </tr>
+  </tbody>
+</table>
+</div>
