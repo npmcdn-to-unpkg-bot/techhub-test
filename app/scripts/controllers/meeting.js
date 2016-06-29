@@ -7,7 +7,6 @@ angular.module('techhubApp').controller('MeetingCtrl',function(rooms,$timeout){
         $timeout(function(){
             vm.rooms = response.items;
             setMasonry();
-            console.log(vm.rooms);
         },800);
     });
 
