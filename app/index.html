@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/meetings.css">
+    <base href="/">
     <script src="https://npmcdn.com/contentful@latest/browser-dist/contentful.min.js"></script>
   </head>
   <body ng-app="techhubApp">
@@ -29,9 +30,9 @@
 
             <ul class="nav navbar-nav">
               <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/meetings">Meeting Rooms</a></li>
-              <li><a ng-href="#/bookings">Bookings</a></li>
-              <li><a ng-href="#/events">Techhub Events</a></li>
+              <li><a ng-href="/meetings">Meeting Rooms</a></li>
+              <li><a ng-href="/bookings">Bookings</a></li>
+              <li><a ng-href="/events">Techhub Events</a></li>
             </ul>
           </div>
         </div>
@@ -71,6 +72,7 @@
         <script src="scripts/controllers/events.js"></script>
         <script src="scripts/controllers/booking.js"></script>
         <script src="scripts/services/rooms.js"></script>
+        <script src="scripts/services/eventsRetrieval.js"></script>
         <!-- endbuild -->
 </body>
 </html>
