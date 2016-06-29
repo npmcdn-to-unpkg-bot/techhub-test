@@ -7,13 +7,14 @@
             <p> {{ room.fields.description }} </p>
             <h6>Features:</h6>
             <ul>
-                <li>Capacity: {{ room.fields.capacity }}</li>
-                <li>Type: {{ room.fields.type }}</li>
-                <li>Price: €{{ room.fields.hourlyPrice }}/h</li>
+                <li><strong>Capacity:</strong> {{ room.fields.capacity }}</li>
+                <li><strong>Type:</strong> {{ room.fields.type }}</li>
+                <li><strong>Price:</strong> €{{ room.fields.hourlyPrice }}/h</li>
             </ul>
-            <p>Location: {{ room.fields.location }}</p>
+            <p><strong>Location:</strong> {{ room.fields.location }}</p>
             <p>{{ room.fields.floor }} floor</p>
-            <p>Opening Hours {{ meeting.isOpen(room.fields.openingHour, room.fields.closingHour) }}</p>
+            <p><strong>Opening Hours</strong> {{ meeting.isOpen(room.fields.openingHour, room.fields.closingHour) }}</p>
+            <p><strong>Non members allowed:</strong> {{ room.fields.availableNonMembers ? 'Yes' : 'No' }}</p>
         </div>
     </div>
 </div>
