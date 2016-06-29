@@ -4,6 +4,7 @@
     height: auto;
     background: #FFF2AC;
     padding: 10px 0 15px 20px;
+    cursor: pointer;
 }
 
 .room-card h3 {
