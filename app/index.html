@@ -11,32 +11,8 @@
     <script src="https://npmcdn.com/contentful@latest/browser-dist/contentful.min.js"></script>
   </head>
   <body ng-app="techhubApp">
-    <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container navigation">
-          <div class="navbar-header">
 
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-
-            <a class="navbar-brand" href="/">techhub</a>
-        </div>
-
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
-            <ul class="nav navbar-nav" ng-controller="NavigationCtrl">
-              <li ng-class="{active:isActive('/')}"><a href="/">Home</a></li>
-              <li ng-class="{active:isActive('/meetings')}"><a ng-href="/meetings">Meeting Rooms</a></li>
-              <li ng-class="{active:isActive('/bookings')}"><a ng-href="/bookings">Bookings</a></li>
-              <li ng-class="{active:isActive('/events')}"><a ng-href="/events">Techhub Events</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+    <navbar></navbar>
 
     <div class="container">
     <div ng-view=""></div>
@@ -70,6 +46,7 @@
         <script src="scripts/controllers/meeting.js"></script>
         <script src="scripts/controllers/events.js"></script>
         <script src="scripts/controllers/booking.js"></script>
+        <script src="scripts/directives/navbar.js"></script>
         <script src="scripts/services/rooms.js"></script>
         <script src="scripts/services/eventsRetrieval.js"></script>
         <!-- endbuild -->
