@@ -24,16 +24,10 @@
     <div class="row">
       <div class="col-sm-4">
         <div class="list-group">
-          <span href="#" class="list-group-item">8:30am</span>
-          <span href="#" class="list-group-item">9:00am</span>
-          <span href="#" class="list-group-item">9:30am</span>
-          <span href="#" class="list-group-item">10:00am</span>
-          <span href="#" class="list-group-item">10:30am</span>
-          <span href="#" class="list-group-item">11:00am</span>
-          <span href="#" class="list-group-item">11:30am</span>
-        </div>
+          <span href="#" class="list-group-item {{class}}" ng-click="booking.selectSlot($event);booking.checkSlots()" ng-repeat="slot in booking.slots">{{ slot }}am</span>
+        </div ng-repeat-end>
         <p class="text-right">
-          <a href="#" class="btn btn-primary disabled btn-lg">Book</a>
+          <a href="#" class="btn btn-primary disabled btn-lg" id="book-button">Book</a>
         </p>
       </div>
       <div class="col-sm-8">
